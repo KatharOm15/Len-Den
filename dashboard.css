@@ -14,6 +14,7 @@ body {
 }
 
 .navbar {
+  z-index: 1000;
   width: 100%;
   height: auto;
   text-align: center;
@@ -116,6 +117,7 @@ body {
 }
 
 .filters {
+  z-index: 1000;
   width: 100%;
   height: auto;
   margin-top: 56px;
@@ -138,9 +140,11 @@ body {
   transform: scale(1.2);
   color: #ffffffd8;
 }
+/* Navbar Ends Hre */
 
 
 
+/* Cards Stats Here */
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 @import url("https://fonts.cdnfonts.com/css/proxima-nova-condensed");
@@ -165,6 +169,7 @@ button {
   padding: 10px;
 }
 .restaurant-container{
+
   margin-top: 12%;
 }
 
@@ -224,6 +229,7 @@ button {
 
 .restaurant-card {
   margin-left:3% ;
+  
   transition: transform 0.3s ease-in-out;
   font-family: "Arial", sans-serif;
   background: transparent;
@@ -231,7 +237,7 @@ button {
 
 .restaurant-card:hover {
   cursor: pointer;
-  /* transform: scale(0.95); */
+  transform: scale(0.95);
 }
 
 .image-container {
@@ -725,3 +731,5 @@ a{
   background: #fff;
   color: #ff0000;
 }
+
+/* Cards Ends Here */
