@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
     <link rel="stylesheet" href="dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
   <body>
     <!-- Navbar Body Starts Here -->
@@ -12,7 +16,7 @@
       <div class="navbar">
         <div class="logo">
           <div class="logodetail">
-            <img src="./images/lenden-logo.png" class="img1" />
+            <img src="./images/lenden-white-logo.png" class="img1" />
             <h3>lenden.com</h3>
           </div>
         </div>
@@ -26,16 +30,36 @@
           <a href="./sign-in.html"><button class="login">Sign In</button></a>
         </div>
       </div>
-      <div class="filters">
-        <div class="filter">Flates</div>
-        <div class="filter">Offices</div>
-        <div class="filter">Shops</div>
-        <div class="filter">Banglos</div>
-        <div class="filter">Party Venue</div>
-      </div>
+      
     </div>
     <!-- Navbar Ends Here -->
 
+    <!-- Slider Starts Here -->
+    <div class="slider">
+      <div class="slides">
+        <img
+          src="./images/house1.jpg"
+          data-src="./images/house1.jpg"
+          alt="House 1"
+        />
+        <img
+          src="./images/house2.jpg"
+          data-src="./images/house2.jpg"
+          alt="House 2"
+        />
+        <img
+          src="./images/house3.jpg"
+          data-src="./images/house3.jpg"
+          alt="House 3"
+        />
+        <img
+          src="./images/house5.jpg"
+          data-src="./images/house5.jpg"
+          alt="House 4"
+        />
+      </div>
+    </div>
+    <!-- Slider Ends Here -->
     <!-- Card Container Starts Here -->
     <div class="container">
   <div class="restaurant-container">
@@ -44,7 +68,7 @@
     <button class="restaurant-arrow-left"><i class="bi bi-arrow-left"></i></button>
     <button class="restaurant-arrow-right"><i class="bi bi-arrow-right"></i></button>
   </div>
-  <a href="index.html">
+  <a href="flats.html">
   <div class="card-slider">
     <div class="restaurant-card">
         <div class="image-container">
@@ -175,14 +199,14 @@
     <button class="restaurant-arrow-left"><i class="bi bi-arrow-left"></i></button>
     <button class="restaurant-arrow-right"><i class="bi bi-arrow-right"></i></button>
   </div>
-  <a href="index.html">
+  <a href="apartment.html">
   <div class="card-slider">
     <div class="restaurant-card">
         <div class="image-container">
             <img src="./images/house1.jpg" alt="">
             <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
         </div>
-        <h3 class="restaurant-name">1CR-2CR</h3>
+        <h3 class="restaurant-name">11CR-2CR</h3>
         <div class="info-container">
             <div class="info-row">
                 <div class="rating">
@@ -306,7 +330,7 @@
     <button class="restaurant-arrow-left"><i class="bi bi-arrow-left"></i></button>
     <button class="restaurant-arrow-right"><i class="bi bi-arrow-right"></i></button>
   </div>
-  <a href="index.html">
+  <a href="partyvenue.html">
   <div class="card-slider">
     <div class="restaurant-card">
         <div class="image-container">
@@ -431,6 +455,138 @@
   </div>
 </a>
 </div>
+<div class="restaurant-container">
+    <div class="label-container">
+      <h2>Recently Added <span class="">Appartment</span></h2>
+      <button class="restaurant-arrow-left"><i class="bi bi-arrow-left"></i></button>
+      <button class="restaurant-arrow-right"><i class="bi bi-arrow-right"></i></button>
+    </div>
+    <a href="bungalow.html">
+    <div class="card-slider">
+      <div class="restaurant-card">
+          <div class="image-container">
+              <img src="./images/house1.jpg" alt="">
+              <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
+          </div>
+          <h3 class="restaurant-name">1CR-2CR</h3>
+          <div class="info-container">
+              <div class="info-row">
+                  <div class="rating">
+                      <span class="rating-star"><i class="bi bi-star-fill star"></i></span>
+                      <span class="review-count">(4.6)</span>
+                  </div>
+                  <div class="delivery-info">
+                      <i class="bi bi-dot"></i> 15-20 mins
+                  </div>
+              </div>
+              <p>Short description</p>
+              <p>India</p>
+          </div>
+      </div>
+      <div class="restaurant-card">
+          <div class="image-container">
+              <img src="./images/house2.jpg" alt="">
+              <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
+          </div>
+          <h3 class="restaurant-name">Restaurant Name</h3>
+          <div class="info-container">
+              <div class="info-row">
+                  <div class="rating">
+                      <span class="rating-star"><i class="bi bi-star-fill star"></i></span>
+                      <span class="review-count">(4.6)</span>
+                  </div>
+                  <div class="delivery-info">
+                      <i class="bi bi-dot"></i> 15-20 mins
+                  </div>
+              </div>
+              <p>Short description</p>
+              <p>India</p>
+          </div>
+      </div>
+      <div class="restaurant-card">
+          <div class="image-container">
+              <img src="./images/house3.jpg" alt="">
+              <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
+          </div>
+          <h3 class="restaurant-name">Restaurant Name</h3>
+          <div class="info-container">
+              <div class="info-row">
+                  <div class="rating">
+                      <span class="rating-star"><i class="bi bi-star-fill star"></i></span>
+                      <span class="review-count">(4.6)</span>
+                  </div>
+                  <div class="delivery-info">
+                      <i class="bi bi-dot"></i> 15-20 mins
+                  </div>
+              </div>
+              <p>Short description</p>
+              <p>India</p>
+          </div>
+      </div>
+      <div class="restaurant-card">
+          <div class="image-container">
+              <img src="./images/house4.jpg" alt="">
+              <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
+          </div>
+          <h3 class="restaurant-name">Restaurant Name</h3>
+          <div class="info-container">
+              <div class="info-row">
+                  <div class="rating">
+                      <span class="rating-star"><i class="bi bi-star-fill star"></i></span>
+                      <span class="review-count">(4.6)</span>
+                  </div>
+                  <div class="delivery-info">
+                      <i class="bi bi-dot"></i> 15-20 mins
+                  </div>
+              </div>
+              <p>Short description</p>
+              <p>India</p>
+          </div>
+      </div>
+      <div class="restaurant-card">
+          <div class="image-container">
+              <img src="./images/apartment1.jpg" alt="">
+              <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
+          </div>
+          <h3 class="restaurant-name">Restaurant Name</h3>
+          <div class="info-container">
+              <div class="info-row">
+                  <div class="rating">
+                      <span class="rating-star"><i class="bi bi-star-fill star"></i></span>
+                      <span class="review-count">(4.6)</span>
+                  </div>
+                  <div class="delivery-info">
+                      <i class="bi bi-dot"></i> 15-20 mins
+                  </div>
+              </div>
+              <p>Short description</p>
+              <p>India</p>
+          </div>
+      </div>
+      <div class="restaurant-card">
+          <div class="image-container">
+              <img src="./images/apartment2.jpg" alt="">
+              <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
+          </div>
+          <h3 class="restaurant-name">Restaurant Name</h3>
+          <div class="info-container">
+              <div class="info-row">
+                  <div class="rating">
+                      <span class="rating-star"><i class="bi bi-star-fill star"></i></span>
+                      <span class="review-count">(4.6)</span>
+                  </div>
+                  <div class="delivery-info">
+                      <i class="bi bi-dot"></i> 15-20 mins
+                  </div>
+              </div>
+              <p>Short description</p>
+              <p>India</p>
+          </div>
+      </div>
+    </div>
+  </a>
+  </div>
+
 </div>
 <!-- Cards End Here -->
 <!-- Footer Starts Here -->
@@ -550,36 +706,7 @@
   <!-- Footer Ends Here -->
 </footer>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const restaurantContainer = document.querySelector(".card-slider");
-    const leftRButton = document.querySelector(".restaurant-arrow-left");
-    const rightRButton = document.querySelector(".restaurant-arrow-right");
-  
-    function updateButtonState() {
-      leftRButton.disabled = restaurantContainer.scrollLeft <= 0;
-      rightRButton.disabled =
-        restaurantContainer.scrollLeft + restaurantContainer.offsetWidth >=
-        restaurantContainer.scrollWidth;
-    }
-  
-    leftRButton.onclick = function () {
-      restaurantContainer.scrollBy({
-        left: -restaurantContainer.offsetWidth / 2,
-        behavior: "smooth",
-      });
-    };
-  
-    rightRButton.onclick = function () {
-      restaurantContainer.scrollBy({
-        left: restaurantContainer.offsetWidth / 2,
-        behavior: "smooth",
-      });
-    };
-  
-    restaurantContainer.addEventListener("scroll", updateButtonState);
-    updateButtonState();
-  });
+<script src="script.js">
 </script>
     
   </body>
