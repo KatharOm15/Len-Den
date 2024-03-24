@@ -19,7 +19,7 @@
       <img src="./images/lenden-logo (2).png" alt="Logo" />
       <h3>lenden.com</h3>
       <h2>Sign Up</h2>
-      <form action="/sign-in" method="post">
+      <form method="post" action="/sign-up.html">
         <div class="form-group">
           <input
             type="text"
@@ -50,10 +50,25 @@
             ><i onclick="showPass()" class="fas fa-eye"></i
           ></span>
         </div>
+        <div class="role-container">
+          <div class="box user" id="user-box" onclick="selectRole('user')">
+            <p>User</p>
+          </div>
+          <div
+            class="box broker"
+            id="broker-box"
+            onclick="selectRole('broker')"
+          >
+            <p>Broker</p>
+          </div>
+        </div>
+        <input type="hidden" name="role" id="role" value="user" />
+        <!-- Hidden input field for role -->
+
         <button type="submit">Sign Up</button>
       </form>
       <p>Already have an account? <a href="sign-in.html">Sign In</a></p>
     </div>
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

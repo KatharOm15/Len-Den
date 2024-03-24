@@ -125,6 +125,29 @@ img {
   color: #000;
 }
 
+.role-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-top: -10px;
+}
+
+.box {
+  width: 40%;
+  padding: 0px;
+  margin: 10px;
+  border: 1px solid #00000063;
+  color: #00000063;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.selected {
+  border: 2px solid#fea100cf;
+  color: #000;
+}
+
 @media screen and (max-width: 600px) {
   .login-container {
     max-width: 90%;

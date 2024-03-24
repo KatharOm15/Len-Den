@@ -1,5 +1,27 @@
+// JavaScript function to update the hidden input field with selected role
+function selectRole(role) {
+  document.getElementById("role").value = role;
+  console.log(role);
+}
+
+//checking user is authenticated or not and hiding sign-in and sign-up options
+window.onload = function () {
+  fetch("/auth-status")
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.isAuthenticated) {
+        document.querySelector(".buttons").style.display = "none";
+        document.querySelector(".out").style.display = "inline-block";
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching authentication status:", error);
+    });
+};
+
 //cards slider with click
 document.addEventListener("DOMContentLoaded", function () {
+  //Slider
   const restaurantContainer = document.querySelector(".card-slider");
   const leftRButton = document.querySelector(".restaurant-arrow-left");
   const rightRButton = document.querySelector(".restaurant-arrow-right");
@@ -29,10 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
   restaurantContainer.addEventListener("scroll", updateButtonState);
-});
 
-//Slider JS (Dashboard)
-document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelector(".slides");
   const slideWidth = slides.firstElementChild.clientWidth;
   let currentPosition = 0;
