@@ -10,14 +10,35 @@ window.onload = function () {
     .then((response) => response.json())
     .then((data) => {
       if (data.isAuthenticated) {
-        document.querySelector(".buttons").style.display = "none";
-        document.querySelector(".out").style.display = "inline-block";
+        // Hide the sign-in button after signing in
+        document.getElementById("sign-in").style.display = "none";
+        document.getElementById("get-started").style.display = "none";
+        // Display the sign-out button
+        document.getElementById("sign-out").style.display = "inline-block";
+      } else {
+        // Show the sign-in button after signing out
+        document.getElementById("sign-in").style.display = "inline-block";
+        document.getElementById("get-started").style.display = "inline-block";
+        // Hide the sign-out button
+        document.getElementById("sign-out").style.display = "none";
       }
     })
     .catch((error) => {
       console.error("Error fetching authentication status:", error);
     });
 };
+
+let signOutButton = document.getElementById("sign-out");
+signOutButton.addEventListener("click", () => {
+  fetch("/sign-out", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then(() => {
+    window.location.reload();
+  });
+});
 
 //cards slider with click
 document.addEventListener("DOMContentLoaded", function () {
@@ -88,6 +109,8 @@ inputField.addEventListener("blur", () => {
     inputField.placeholder = placeholderText;
   }
 });
+
+// show pass
 function showPass() {
   const passwordField = document.getElementById("password");
 

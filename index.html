@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="./CSS/dashboard.css" />
 
     <link
       rel="icon"
@@ -17,63 +17,42 @@
     />
   </head>
   <body>
-    <!-- Navbar Body Starts Here -->
     <div class="main">
-      <div class="navbar">
-        <div class="logo">
-          <div class="logodetail">
-            <img
-              src="./images/lenden-white-logo-removebg-preview.png"
-              class="img1"
-            />
-            <h3>lenden.com</h3>
-          </div>
-        </div>
-        <div class="menu">
-          <div class="search">
-            <input type="search" class="search" placeholder="Search city" />
-          </div>
-        </div>
-        <div class="buttons">
-          <a href="./sign-up.html"><button class="signup">Sign Up</button></a>
-          <a href="./sign-in.html"><button class="login">Sign In</button></a>
-        </div>
-        <div class="out">
-          <a href="/sign-out"><button class="signout">Sign Out</button></a>
-        </div>
-      </div>
-    </div>
-    <!-- Navbar Ends Here -->
+      <img src="./images/main-area.jpg" />
 
-    <!-- Slider Starts Here -->
-    <div class="slider">
-      <div class="slides">
-        <img
-          src="./images/house1.jpg"
-          data-src="./images/house1.jpg"
-          alt="House 1"
-        />
-        <img
-          src="./images/house2.jpg"
-          data-src="./images/house2.jpg"
-          alt="House 2"
-        />
-        <img
-          src="./images/house3.jpg"
-          data-src="./images/house3.jpg"
-          alt="House 3"
-        />
-        <img
-          src="./images/house5.jpg"
-          data-src="./images/house5.jpg"
-          alt="House 4"
-        />
+      <div class="navbar">
+        <div class="logo-text">
+          <h3 href="https://lenden.com">LENDEN</h3>
+        </div>
+        <div class="button">
+          <a href="./index.html">HOME</a>
+          <a href="#">PROPERTIES</a>
+          <a href="#">AGENTS</a>
+          <a href="#">ABOUT</a>
+          <a href="./sign-in.html" id="sign-in">SIGN IN</a>
+          <a href="./index.html" id="sign-out" style="display: none"
+            >SIGN OUT</a
+          >
+        </div>
+      </div>
+      <div class="slogan">
+        <h1>FIND YOUR PERFECT PROPERTY</h1>
+        <h1>FIND YOUR HOME</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis sunt
+          enim, soluta dolorum minus ipsam cum voluptatibus, quidem animi
+          eligendi ex. Sint repudiandae praesentium tempora quis voluptate,
+          totam quos eligendi.
+        </p>
+        <a href="./sign-in.html"
+          ><button id="get-started">Get Started</button></a
+        >
       </div>
     </div>
-    <!-- Slider Ends Here -->
+
     <!-- Card Container Starts Here -->
     <div class="container">
-      <div class="restaurant-container">
+      <div class="inner-container">
         <div class="label-container">
           <h2>Recently Added <span class="">Flats</span></h2>
           <button class="restaurant-arrow-left">
@@ -83,144 +62,94 @@
             <i class="bi bi-arrow-right"></i>
           </button>
         </div>
-        <a href="flats.html">
-          <div class="card-slider">
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/house1.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">1CR-2CR</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
+        <div class="card-slider">
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/house1.jpg" alt="" />
             </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/house2.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
               </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
-            </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/house3.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
-            </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/house4.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
-            </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/apartment1.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
-            </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/apartment2.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
             </div>
           </div>
-        </a>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/house2.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/house3.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/house4.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/apartment1.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/apartment2.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="restaurant-container">
+      <div class="inner-container">
         <div class="label-container">
           <h2>Recently Added <span class="">Flats</span></h2>
           <button class="restaurant-arrow-left">
@@ -230,144 +159,94 @@
             <i class="bi bi-arrow-right"></i>
           </button>
         </div>
-        <a href="apartment.html">
-          <div class="card-slider">
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/house1.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">11CR-2CR</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
+        <div class="card-slider">
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/house1.jpg" alt="" />
             </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/house2.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
               </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
-            </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/house3.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
-            </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/house4.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
-            </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/apartment1.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
-            </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/apartment2.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
             </div>
           </div>
-        </a>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/house2.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/house3.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/house4.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/apartment1.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/apartment2.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="restaurant-container">
+      <div class="inner-container">
         <div class="label-container">
           <h2>Recently Added <span class="">Appartment</span></h2>
           <button class="restaurant-arrow-left">
@@ -377,144 +256,94 @@
             <i class="bi bi-arrow-right"></i>
           </button>
         </div>
-        <a href="partyvenue.html">
-          <div class="card-slider">
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/house1.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">1CR-2CR</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
+        <div class="card-slider">
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/house1.jpg" alt="" />
             </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/house2.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
               </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
-            </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/house3.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
-            </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/house4.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
-            </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/apartment1.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
-            </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/apartment2.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
             </div>
           </div>
-        </a>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/house2.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/house3.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/house4.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/apartment1.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/apartment2.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="restaurant-container">
+      <div class="inner-container">
         <div class="label-container">
           <h2>Recently Added <span class="">Appartment</span></h2>
           <button class="restaurant-arrow-left">
@@ -524,186 +353,143 @@
             <i class="bi bi-arrow-right"></i>
           </button>
         </div>
-        <a href="bungalow.html">
-          <div class="card-slider">
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/house1.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">1CR-2CR</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
+        <div class="card-slider">
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/house1.jpg" alt="" />
             </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/house2.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
               </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
-            </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/house3.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
-            </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/house4.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
-            </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/apartment1.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
-            </div>
-            <div class="restaurant-card">
-              <div class="image-container">
-                <img src="./images/apartment2.jpg" alt="" />
-                <!-- <div class="discount-badge">20% OFF UPTO ₹50</div> -->
-              </div>
-              <h3 class="restaurant-name">Restaurant Name</h3>
-              <div class="info-container">
-                <div class="info-row">
-                  <div class="rating">
-                    <span class="rating-star"
-                      ><i class="bi bi-star-fill star"></i
-                    ></span>
-                    <span class="review-count">(4.6)</span>
-                  </div>
-                  <div class="delivery-info">
-                    <i class="bi bi-dot"></i> 15-20 mins
-                  </div>
-                </div>
-                <p>Short description</p>
-                <p>India</p>
-              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
             </div>
           </div>
-        </a>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/house2.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/house3.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/house4.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/apartment1.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+          <div class="inner-card">
+            <div class="image-container">
+              <img src="./images/apartment2.jpg" alt="" />
+            </div>
+            <h3 class="Property-details">Property name & price</h3>
+            <div class="info-container">
+              <div class="info-row">
+                <p>State</p>
+                <div class="city">City</div>
+              </div>
+              <p>Short description</p>
+              <a href="#"><button class="details">View Details</button></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Cards End Here -->
-<!--FONT AWESOME-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- FONT AWESOME
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 
-
-<!--FOOTER-->
-<footer>
-<div class="top_header">
-<section>
-<span><i class="fa fa-map-marker"></i></span>
-<span>Street, full address, state/province, country, pincode</span>
-</section>
-<section>
-<span><i class="fa fa-phone"></i></span>
-<span>(00) 0000 0000</span>
-</section>
-<section>
-<span><i class="fa fa-envelope"></i></span>
-<span>info@websitename.com</span>
-</section>
-</div>
-<span class="border-shape"></span>
-<div class="bottom_content">
-<section>
-<a href="#"><i class="fa fa-facebook"></i></a>
-<a href="#"><i class="fa fa-instagram"></i></a>
-<a href="#"><i class="fa fa-twitter"></i></a>
-<a href="#"><i class="fa fa-telegram"></i></a>
-</section>
-<section>
-<a href="#">Home</a>
-<a href="#">About us</a>
-<a href="#">Order</a>
-<a href="#">Retail</a>
-<a href="#">Member</a>
-<a href="#">Contact Us</a>
-</section>
-</div>
-<div class="copyright">
-Copyright © 2021 websitename - All rights reserved 
-</div>
-</footer>
+    <!--FOOTER-->
+    <footer>
+      <div class="top_header">
+        <section>
+          <span><i class="fa fa-map-marker"></i></span>
+          <span>Chhatrapati Sambhaji Nagar</span>
+        </section>
+        <section>
+          <span><i class="fa fa-phone"></i></span>
+          <span>(+91) 9422582918</span>
+        </section>
+        <section>
+          <span><i class="fa fa-envelope"></i></span>
+          <span>lenden@gmail.com</span>
+        </section>
+      </div>
+      <span class="border-shape"></span>
+      <div class="bottom_content">
+        <section class="social-media">
+          <a href="https://www.facebook.com" target="_blank"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="https://instagram.com" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.twitter.com" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="https://www.telegram.org" target="_blank"
+            ><i class="fab fa-telegram"></i
+          ></a>
+        </section>
+        <section>
+          <a href="#">Home</a>
+          <a href="#">About us</a>
+          <a href="#">Order</a>
+          <a href="#">Retail</a>
+          <a href="#">Member</a>
+          <a href="#">Contact Us</a>
+        </section>
+      </div>
+      <div class="copyright">
+        Copyright © 2024 lenden.com - All rights reserved
+      </div>
+    </footer>
 
     <script src="script.js"></script>
   </body>

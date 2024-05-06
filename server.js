@@ -73,7 +73,7 @@ app.get("/auth-status", (req, res) => {
 });
 
 //handle sign-out
-app.get("/sign-out", (req, res) => {
+app.post("/sign-out", (req, res) => {
   req.session.isAuthenticated = false;
 
   res.redirect("/index.html");
