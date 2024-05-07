@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const connect = mongoose.connect(
-  "mongodb+srv://rudrakshnile930:nilerudra064@lenden.vhsvsdt.mongodb.net/sign-up"
+  "mongodb+srv://rudrakshnile930:nilerudra064@lenden.vhsvsdt.mongodb.net/lenden"
 );
 
 //checking database connected or not
@@ -20,7 +20,15 @@ const userSchema = new mongoose.Schema({
   role: String,
 });
 
-//collection part
-const collection = mongoose.model("User", userSchema);
+const adminScheme = new mongoose.Schema({
+  propname: String,
+  location: String,
+  imgname: String,
+  buffer: Buffer,
+});
 
-module.exports = collection;
+//collection part
+const user_collection = mongoose.model("User", userSchema);
+const admin_collection = mongoose.model("adminCollection", adminScheme);
+
+module.exports = { user_collection, admin_collection };
