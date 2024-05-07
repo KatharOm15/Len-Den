@@ -222,22 +222,22 @@
     </div>
     <div class="container">
         <h1>Admin Panel</h1>
-        <form id="property-form" enctype="multipart/form-data">
+        <form id="property-form"  method="post" action="/admin.html" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="property-name">Property Name:</label>
-                <input type="text" id="property-name" name="property-name" required>
+                <input type="text" id="property-name" name="propertyname" required>
             </div>
             <div class="form-group">
                 <label for="property-name">Property Price:</label>
-                <input type="text" placeholder="₹" id="property-name" name="property-name" required>
+                <input type="number" placeholder="₹" id="property-price" name="propertyprice" required>
             </div>
             <div class="form-group">
                 <label for="property-description">Property Location:</label>
-                <textarea id="property-description" name="property-description" required></textarea>
+                <textarea id="property-description" name="propertydescription" required></textarea>
             </div>
             <div class="form-group">
                 <label for="property-image">Property Image:</label>
-                <input type="file" id="property-image" name="property-image" accept="image/*" required>
+                <input type="file" id="property-image" name="propertyimage" accept="image/*" required>
             </div>
             
             <div class="form-group">

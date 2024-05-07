@@ -17,14 +17,12 @@ mongoose.disconnect().then(() => {
   const adminScheme= new mongoose.Schema({
     propname: String,
     location:String,
+    price:Number,
     imgname: String,
     buffer: Buffer
     
   });
   
-
-  
-
 
   const collection1 = mongoose.model("adminCollection", adminScheme);
 

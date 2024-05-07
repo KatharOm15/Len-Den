@@ -92,12 +92,13 @@ app.post("/sign-out", (req, res) => {
 app.use(express.urlencoded({extended:false}))
 const upload=multer({dest:"upload/"})
 
-//adding property
+// adding property
 app.post("/listproperty.html",upload.single("inputFile"), async (req,res)=>{
   
   const data = {
     propname: req.body.propname,
     location:req.body.location,
+    price:req.body.price,
     imgname: req.file.originalname,
     buffer: req.file.filename
   };
@@ -113,6 +114,8 @@ app.post("/listproperty.html",upload.single("inputFile"), async (req,res)=>{
   }
   console.log(req.file);
 })
+
+
 
 
 const port = 3000;
