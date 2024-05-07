@@ -3,6 +3,8 @@ const session = require("express-session");
 const path = require("path");
 const bodyParser = require("body-parser");
 const collection = require("./config");
+const admincoll=require("./adminconfig");
+const multer=require("multer");
 
 const app = express();
 
@@ -33,14 +35,20 @@ app.post("/sign-up.html", async (req, res) => {
   } else {
     await collection.insertOne(data);
     req.session.isAuthenticated = true;
-    res.redirect("/index.html");
+    if(data.role=="user")
+      {
+        res.redirect("/index.html");
+      }
+      else{
+        res.redirect("/admin.html");
+      }
   }
 });
 
 app.post("/sign-in.html", async (req, res) => {
   const data = {
     email: req.body.username,
-    password: req.body.password,
+    password: req.body.password
   };
 
   const userExists = await collection.findOne({
@@ -78,6 +86,34 @@ app.post("/sign-out", (req, res) => {
 
   res.redirect("/index.html");
 });
+
+//uploading image
+
+app.use(express.urlencoded({extended:false}))
+const upload=multer({dest:"upload/"})
+
+//adding property
+app.post("/listproperty.html",upload.single("inputFile"), async (req,res)=>{
+  
+  const data = {
+    propname: req.body.propname,
+    location:req.body.location,
+    imgname: req.file.originalname,
+    buffer: req.file.filename
+  };
+  console.log(data);
+  const existingUser = await admincoll.findOne({ propname: data.propname });
+
+  if (existingUser) {
+    res.send("User Already Exists. Please choose a different email address.");
+  } else {
+    await admincoll.insertMany(data);
+    req.session.isAuthenticated = true;
+    res.redirect("/admin.html");
+  }
+  console.log(req.file);
+})
+
 
 const port = 3000;
 app.listen(port, () => {
