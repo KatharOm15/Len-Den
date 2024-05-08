@@ -2,7 +2,7 @@ const express = require("express");
 const session = require("express-session");
 const path = require("path");
 const bodyParser = require("body-parser");
-const { user_collection, admin_collection } = require("./config");
+const { user_collection, admin_collection, location } = require("./config");
 const multer = require("multer");
 
 const app = express();
@@ -59,7 +59,7 @@ app.post("/sign-in.html", async (req, res) => {
     if (role == "user") {
       res.redirect("/index.html");
     } else {
-      res.redirect("/admin.html");
+      res.redirect("/addProperty.html");
     }
   } else {
     res.send("User does not exist!!");
@@ -95,7 +95,7 @@ app.use(express.urlencoded({ extended: false }));
 const upload = multer({ dest: "upload/" });
 
 //adding property
-app.post("/listproperty.html", upload.single("inputFile"), async (req, res) => {
+app.post("/addProperty.html", upload.single("inputFile"), async (req, res) => {
   const data = {
     propname: req.body.propname,
     location: req.body.location,

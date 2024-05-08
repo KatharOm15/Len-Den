@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const connect = mongoose.connect(
   "mongodb+srv://rudrakshnile930:nilerudra064@lenden.vhsvsdt.mongodb.net/lenden"
 );
@@ -27,7 +28,7 @@ const adminScheme = new mongoose.Schema({
   buffer: Buffer,
 });
 
-//collection part
+// collection part
 const user_collection = mongoose.model("User", userSchema);
 const admin_collection = mongoose.model("adminCollection", adminScheme);
 
