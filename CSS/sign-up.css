@@ -19,7 +19,7 @@ body {
   animation: fadeIn 0.5s ease;
   text-align: center;
   max-width: 400px;
-  max-height: 80vh; /* Added max-height */
+  max-height: 70vh; /* Added max-height */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,20 +53,20 @@ label {
 
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="number"] {
   width: calc(130% - 30px);
   margin-left: -30px;
-  padding: 10px;
+  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 5px;
   transition: all 0.3s ease;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 button {
@@ -108,7 +108,7 @@ img {
 .password-toggle-icon {
   position: absolute;
   top: 70%;
-  right: 10px;
+  right: -10px;
   transform: translateY(-50%);
   cursor: pointer;
 }
@@ -116,7 +116,7 @@ img {
 .password-toggle-icon i {
   font-size: 1em;
   line-height: 1;
-  color: #333;
+  color: #000000c0;
   transition: color 0.3s ease-in-out;
   margin-bottom: 10px;
   margin-left: 40px;
@@ -134,13 +134,18 @@ img {
 }
 
 .box {
-  width: 40%;
+  width: 50%;
   padding: 0px;
   margin: 10px;
   border: 1px solid #00000063;
   color: #00000063;
   cursor: pointer;
   border-radius: 8px;
+}
+
+.box p {
+  padding: 8px;
+  margin: 0;
 }
 
 .selected {
@@ -151,26 +156,30 @@ img {
 @media screen and (max-width: 600px) {
   .login-container {
     max-width: 90%;
+    max-height: 90%;
   }
 
   input[type="text"],
   input[type="email"],
-  input[type="password"] {
+  input[type="password"],
+  input[type="number"] {
     width: 90%;
-    margin-left: 0;
+    margin-left: 0px;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .login-container {
     max-width: 90%;
+    height: 85%;
   }
 
   input[type="text"],
   input[type="email"],
-  input[type="password"] {
+  input[type="password"],
+  input[type="number"] {
     width: 90%;
     margin-left: 0;
-    margin-bottom: 10px;
+    margin-bottom: -5px;
   }
 }

@@ -16,20 +16,27 @@ connect
 //creating Schema
 const userSchema = new mongoose.Schema({
   name: String,
+  mobile: String,
   email: String,
   password: String,
   role: String,
 });
 
-const adminScheme = new mongoose.Schema({
-  propname: String,
-  location: String,
-  imgname: String,
-  buffer: Buffer,
+const propertySchema = new mongoose.Schema({
+  broker: String,
+  propertyName: String,
+  propertyArea: String,
+  propertyPrice: String,
+  address: String,
+  propertyType: String,
+  state: String,
+  city: String,
+  propertyDescription: String,
+  filepath: String,
 });
 
 // collection part
 const user_collection = mongoose.model("User", userSchema);
-const admin_collection = mongoose.model("adminCollection", adminScheme);
+const property_collection = mongoose.model("PropertyInfo", propertySchema);
 
-module.exports = { user_collection, admin_collection };
+module.exports = { user_collection, property_collection };
