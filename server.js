@@ -2,9 +2,8 @@ const express = require("express");
 const session = require("express-session");
 const path = require("path");
 const bodyParser = require("body-parser");
-const collection = require("./config");
-const admincoll=require("./adminconfig");
-const multer=require("multer");
+const { user_collection, admin_collection, location } = require("./config");
+const multer = require("multer");
 
 const app = express();
 
@@ -28,37 +27,40 @@ app.post("/sign-up.html", async (req, res) => {
     role: req.body.role,
   };
 
-  const existingUser = await collection.findOne({ email: data.email });
+  const existingUser = await user_collection.findOne({ email: data.email });
 
   if (existingUser) {
     res.send("User Already Exists. Please choose a different email address.");
   } else {
-    await collection.insertOne(data);
+    await user_collection.create(data);
     req.session.isAuthenticated = true;
-    if(data.role=="user")
-      {
-        res.redirect("/index.html");
-      }
-      else{
-        res.redirect("/admin.html");
-      }
+    if (data.role == "user") {
+      res.redirect("/index.html");
+    } else {
+      res.redirect("/admin.html");
+    }
   }
 });
 
 app.post("/sign-in.html", async (req, res) => {
   const data = {
     email: req.body.username,
-    password: req.body.password
+    password: req.body.password,
   };
 
-  const userExists = await collection.findOne({
+  const userExists = await user_collection.findOne({
     email: data.email,
     password: data.password,
   });
 
   if (userExists) {
+    const role = userExists.role;
     req.session.isAuthenticated = true;
-    res.redirect("/index.html");
+    if (role == "user") {
+      res.redirect("/index.html");
+    } else {
+      res.redirect("/addProperty.html");
+    }
   } else {
     res.send("User does not exist!!");
   }
@@ -89,32 +91,31 @@ app.post("/sign-out", (req, res) => {
 
 //uploading image
 
-app.use(express.urlencoded({extended:false}))
-const upload=multer({dest:"upload/"})
+app.use(express.urlencoded({ extended: false }));
+const upload = multer({ dest: "upload/" });
 
-// adding property
-app.post("/listproperty.html",upload.single("inputFile"), async (req,res)=>{
-  
+//adding property
+app.post("/addProperty.html", upload.single("inputFile"), async (req, res) => {
   const data = {
     propname: req.body.propname,
-    location:req.body.location,
-    price:req.body.price,
+    location: req.body.location,
     imgname: req.file.originalname,
-    buffer: req.file.filename
+    buffer: req.file.filename,
   };
   console.log(data);
-  const existingUser = await admincoll.findOne({ propname: data.propname });
+  const existingUser = await admin_collection.findOne({
+    propname: data.propname,
+  });
 
   if (existingUser) {
     res.send("User Already Exists. Please choose a different email address.");
   } else {
-    await admincoll.insertMany(data);
+    await admin_collection.insertMany(data);
     req.session.isAuthenticated = true;
     res.redirect("/admin.html");
   }
   console.log(req.file);
-})
-
+});
 
 
 

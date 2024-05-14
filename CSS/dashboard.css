@@ -135,7 +135,7 @@ button {
 }
 
 .label-container .bi {
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .label-container button {
@@ -190,7 +190,7 @@ button {
 .Property-details {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 15px;
   margin: 0;
 }
 
@@ -222,7 +222,7 @@ button {
   .label-container h2 {
     color: #111;
     margin-right: auto;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
   }
 
@@ -441,7 +441,7 @@ footer .bottom_content section {
   .search input[type="search"] {
     font-size: 10px;
     padding: 5px;
-    border-radius: 5px;
+    
     margin-left: 10px;
     margin-top: 5px;
   }
@@ -463,3 +463,106 @@ footer .bottom_content section {
     font-size: 9px;
   }
 } */
+
+
+  /* Popup container */
+
+  .form-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    
+}
+
+/* Popup form */
+/* Popup form */
+.form-container {
+  overflow: scroll;
+  border-radius: 12px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  height: 90%;
+  z-index: 10000;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+
+/* Popup form - show */
+.form-popup.show {
+    display:block;
+    
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container textarea {
+    width: 95%;
+    padding: 10px;
+    margin: 5px 0 10px 0;
+    border: none;
+    background: #f1f1f1;
+    
+}
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2%;
+}
+
+/* Set a style for the cancel button */
+ .cancel {
+  width: 30%;
+  height: 7vh;
+  font-size: 15px;
+  background-color: rgb(134, 128, 128);
+
+    
+}
+.contactus {
+  width: 100%;
+  height: 7vh;
+  font-size: 15px;
+  background-color: rgb(134, 128, 128);
+
+}
+.payment{
+  width: 100%;
+  height: 7vh;
+  font-size: 15px;
+  background-color: rgb(134, 128, 128);
+  
+
+}
+
+.btn a{
+  width: 30%;
+}
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
+
+.image-section {
+  text-align: center;
+  
+ 
+}
+.image-section img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 8px;
+}

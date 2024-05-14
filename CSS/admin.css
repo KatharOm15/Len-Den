@@ -1,0 +1,89 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 10px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  background-color: #f2f2f2;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+form {
+  width: 500px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.411);
+}
+
+input[type="text"],
+select {
+  width: calc(100% - 20px);
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.dropdown {
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+#errorMessage {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-label {
+  position: relative;
+}
+
+.file-label::after {
+  content: "Choose File";
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+#file-path {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  color: #6e6e6e;
+}
+
+.file-label:hover::after {
+  background-color: #0056b3;
+}
