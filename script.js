@@ -1,6 +1,12 @@
 // JavaScript function to update the hidden input field with selected role
 function selectRole(role) {
   document.getElementById("role").value = role;
+  var boxes = document.querySelectorAll(".box");
+  boxes.forEach(function (box) {
+    box.style.border = "1px solid #00000063";
+  });
+  let temp = role + "-box";
+  document.getElementById(temp).style.border = "2px solid Black";
   console.log(role);
 }
 

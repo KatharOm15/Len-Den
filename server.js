@@ -2,7 +2,7 @@ const express = require("express");
 const session = require("express-session");
 const path = require("path");
 const bodyParser = require("body-parser");
-const { user_collection, admin_collection, location } = require("./config");
+const { user_collection, property_collection } = require("./config");
 const multer = require("multer");
 
 const app = express();
@@ -15,6 +15,7 @@ app.use(
     saveUninitialized: true,
   })
 );
+app.use(express.urlencoded({ extended: false }));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname));
@@ -22,6 +23,7 @@ app.use(express.static(__dirname));
 app.post("/sign-up.html", async (req, res) => {
   const data = {
     name: req.body.name,
+    mobile: req.body.number,
     email: req.body.email,
     password: req.body.password,
     role: req.body.role,
@@ -37,7 +39,7 @@ app.post("/sign-up.html", async (req, res) => {
     if (data.role == "user") {
       res.redirect("/index.html");
     } else {
-      res.redirect("/admin.html");
+      res.redirect("/appProperty.html");
     }
   }
 });
@@ -56,6 +58,7 @@ app.post("/sign-in.html", async (req, res) => {
   if (userExists) {
     const role = userExists.role;
     req.session.isAuthenticated = true;
+    req.session.username = data.email;
     if (role == "user") {
       res.redirect("/index.html");
     } else {
@@ -89,32 +92,50 @@ app.post("/sign-out", (req, res) => {
   res.redirect("/index.html");
 });
 
-//uploading image
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    return cb(null, "./uploads");
+  },
+  filename: function (req, file, cb) {
+    return cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
 
-app.use(express.urlencoded({ extended: false }));
-const upload = multer({ dest: "upload/" });
+const upload = multer({ storage });
 
-//adding property
-app.post("/addProperty.html", upload.single("inputFile"), async (req, res) => {
-  const data = {
-    propname: req.body.propname,
-    location: req.body.location,
-    imgname: req.file.originalname,
-    buffer: req.file.filename,
-  };
-  console.log(data);
-  const existingUser = await admin_collection.findOne({
-    propname: data.propname,
-  });
+app.post("/addProperty", upload.single("propertyImg"), async (req, res) => {
+  if (req.session.isAuthenticated) {
+    // Fetch username from session
+    const username = req.session.username;
 
-  if (existingUser) {
-    res.send("User Already Exists. Please choose a different email address.");
+    const data = {
+      broker: username,
+      propertyName: req.body.propertyName,
+      propertyArea: req.body.propertyArea,
+      propertyPrice: req.body.price,
+      address: req.body.address,
+      propertyType: req.body.propertyType,
+      state: req.body.propertyState,
+      city: req.body.city,
+      propertyDescription: req.body.description || "",
+      filepath: req.file.path || "",
+    };
+
+    console.log(req.body.propertyState);
+
+    await property_collection
+      .create(data)
+      .then(() => {
+        console.log("Data sorted");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    res.redirect("/index.html");
   } else {
-    await admin_collection.insertMany(data);
-    req.session.isAuthenticated = true;
-    res.redirect("/admin.html");
+    res.status(401).send("Unauthorized");
   }
-  console.log(req.file);
 });
 
 
