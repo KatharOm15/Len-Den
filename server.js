@@ -4,6 +4,7 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const { user_collection, property_collection } = require("./config");
 const multer = require("multer");
+const { it } = require("node:test");
 
 const app = express();
 
@@ -69,11 +70,19 @@ app.post("/sign-in.html", async (req, res) => {
   }
 });
 
-app.get("/index.html", (req, res) => {
+app.get("/index.html", async(req, res) => {
   const isAuthenticated = req.session.isAuthenticated || false;
 
   if (isAuthenticated) {
+    console.log("hello bro");
+  data=await property_collections.find({
+    address:"Flat No.02, Plot No.41, Gut No. 137, Samarth Residency, Beed By Pass, Aurangabad"
+  });
+  console.log(data);
+
     res.sendFile(path.join(__dirname, "index.html"));
+
+
   } else {
     res.redirect("/sign-in.html");
   }
@@ -138,6 +147,16 @@ app.post("/addProperty", upload.single("propertyImg"), async (req, res) => {
   }
 });
 
+app.get('/api/items', async (req, res) => {
+  try {
+      const items = await property_collection .find();
+      console.log(items)
+      res.json(items);
+      
+  } catch (err) {
+      res.status(500).json({ message: err.message });
+  }
+});
 
 
 const port = 3000;

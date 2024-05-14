@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+
+
+
+
     const restaurantContainer = document.querySelector(".card-slider");
     const leftRButton = document.querySelector(".restaurant-arrow-left");
     const rightRButton = document.querySelector(".restaurant-arrow-right");

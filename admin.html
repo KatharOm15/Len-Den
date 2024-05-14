@@ -1,153 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Panel</title>
-    <link rel="stylesheet" href="./CSS/admin.css" />
-  </head>
-  <body>
-    <div class="navbar">
-      <a href="#" class="navbar-brand">
-        <img src="./images/lenden-icon.png" alt="Logo" />
-        Len-Den
-      </a>
-      <div class="search-box">
-        <input type="text" placeholder="Search..." />
-        <input type="submit" value="Search" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="./CSS/admin.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="sidebar">
+        <h2>Admin Menu</h2>
+        <ul>
+            <li><a href="./index.html">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="./sign-in.html">Sign Out</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        
+      <div class="card">
+        <div class="info">
+        <h1>Add Property Here</h1>
+        <img src="./images/logo insert.png" alt="">
       </div>
-      <a href="./sign-in.html" class="sign-out">Sign Out</a>
+      <div class="detail">
+        <a href="./addProperty.html"><button class="btn">Add</button></a>
+      </div>
     </div>
-    <div class="container">
-      <h1>Admin Panel</h1>
-      <form id="property-form" enctype="multipart/form-data">
-        <div class="form-group">
-          <label for="property-name">Property Name:</label>
-          <input type="text" id="property-name" name="property-name" required />
-        </div>
-        <div class="form-group">
-          <label for="property-name">Property Price:</label>
-          <input
-            type="text"
-            placeholder="₹"
-            id="property-name"
-            name="property-name"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="property-description">Property Location:</label>
-          <textarea
-            id="property-description"
-            name="property-description"
-            required
-          ></textarea>
-        </div>
-        <div class="form-group">
-          <label for="property-image">Property Image:</label>
-          <input
-            type="file"
-            id="property-image"
-            name="property-image"
-            accept="image/*"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <input type="submit" value="Add Property" />
-        </div>
-      </form>
-      <h2>Property List</h2>
-      <ul class="property-list" id="property-list">
-        <!-- Property items will be added dynamically here -->
-      </ul>
+        
     </div>
-
-    <script>
-      var editPropertyForm;
-
-      // Function to handle form submission
-      document
-        .getElementById("property-form")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
-          var propertyName = document.getElementById("property-name").value;
-          var propertyDescription = document.getElementById(
-            "property-description"
-          ).value;
-          var propertyImage =
-            document.getElementById("property-image").files[0];
-          addProperty(propertyName, propertyDescription, propertyImage);
-          document.getElementById("property-form").reset();
-        });
-
-      // Function to add property to the list
-      function addProperty(name, description, image) {
-        var propertyList = document.getElementById("property-list");
-        var li = document.createElement("li");
-        li.className = "property-item";
-        var reader = new FileReader();
-        reader.onload = function (e) {
-          li.innerHTML =
-            '<div style="margin-bottom: 10px;"><strong>' +
-            name +
-            '</strong></div><div style="margin-bottom: 10px;">' +
-            description +
-            '</div><div><img src="' +
-            e.target.result +
-            '" class="property-image"></div><div class="property-actions"><button onclick="showEditPropertyForm(this)">Edit</button><button onclick="deleteProperty(this)">Delete</button></div><div class="edit-property-form" style="display: none;"><form onsubmit="updateProperty(event, this)"><label for="edit-property-name">Name:</label><input type="text" id="edit-property-name" value="' +
-            name +
-            '" required><label for="edit-property-description">Description:</label><textarea id="edit-property-description" required>' +
-            description +
-            '</textarea><input type="submit" value="Update"></form></div>';
-          propertyList.appendChild(li);
-        };
-        reader.readAsDataURL(image);
-      }
-
-      // Function to delete property
-      function deleteProperty(button) {
-        var propertyItem = button.closest(".property-item");
-        propertyItem.remove();
-      }
-
-      // Function to show edit property form
-      function showEditPropertyForm(button) {
-        var propertyItem = button.closest(".property-item");
-        var editForm = propertyItem.querySelector(".edit-property-form");
-        var editName = editForm.querySelector("#edit-property-name");
-        var editDescription = editForm.querySelector(
-          "#edit-property-description"
-        );
-        var name = propertyItem.querySelector("strong").innerText;
-        var description = propertyItem.querySelectorAll("div")[1].innerText;
-
-        editName.value = name;
-        editDescription.value = description;
-
-        if (editPropertyForm) {
-          editPropertyForm.style.display = "none";
-        }
-
-        editPropertyForm = editForm;
-        editForm.style.display = "block";
-      }
-
-      // Function to update property
-      function updateProperty(event, form) {
-        event.preventDefault();
-        var newName = form.querySelector("#edit-property-name").value;
-        var newDescription = form.querySelector(
-          "#edit-property-description"
-        ).value;
-
-        var propertyItem = form.closest(".property-item");
-        propertyItem.querySelector("strong").innerText = newName;
-        propertyItem.querySelectorAll("div")[1].innerText = newDescription;
-
-        form.style.display = "none";
-      }
-    </script>
-  </body>
+  </div>
+    <footer>
+      <div class="top_header">
+        <section>
+          <span><i class="fa fa-map-marker"></i></span>
+          <span>INDIA</span>
+        </section>
+        <section>
+          <span><i class="fa fa-phone"></i></span>
+          <span>(+91) 9422582918</span>
+        </section>
+        <section>
+          <span><i class="fa fa-envelope"></i></span>
+          <span>lenden@gmail.com</span>
+        </section>
+      </div>
+      <span class="border-shape"></span>
+      <div class="bottom_content">
+        <section class="social-media">
+          <a href="https://www.facebook.com" target="_blank"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="https://instagram.com" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.twitter.com" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="https://www.telegram.org" target="_blank"
+            ><i class="fab fa-telegram"></i
+          ></a>
+        </section>
+        <section>
+          <a href="#">Home</a>
+          <a href="#">About us</a>
+          <a href="#">Order</a>
+          <a href="#">Retail</a>
+          <a href="#">Member</a>
+          <a href="#">Contact Us</a>
+        </section>
+      </div>
+      <div class="copyright">
+        Copyright © 2024 lenden.com - All rights reserved
+      </div>
+    </footer>
+    <!-- footer ends here -->
+    <script src="admin.js"></script>
+</body>
 </html>

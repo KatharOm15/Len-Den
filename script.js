@@ -48,6 +48,23 @@ signOutButton.addEventListener("click", () => {
 
 //cards slider with click
 document.addEventListener("DOMContentLoaded", function () {
+  const count=0;
+  fetch('http://localhost:3000/api/items')
+  .then(response => response.json())
+  .then(data => {
+      const dataDiv = document.getElementById('data');
+      data.forEach(item => {
+          const itemDiv = document.createElement('div');
+          itemDiv.textContent =` name : ${item.propertyName},`;
+          dataDiv.appendChild(itemDiv);
+          count++;
+      });
+    console.log(count)
+  })
+
+  .catch(error => console.error('Error fetching data:', error));
+  
+  
   //Slider
   const restaurantContainer = document.querySelector(".card-slider");
   const leftRButton = document.querySelector(".restaurant-arrow-left");
@@ -130,3 +147,4 @@ function showPass() {
     togglePassword.classList.add("fa-eye");
   }
 }
+
