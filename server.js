@@ -40,7 +40,7 @@ app.post("/sign-up.html", async (req, res) => {
     if (data.role == "user") {
       res.redirect("/index.html");
     } else {
-      res.redirect("/appProperty.html");
+      res.redirect("/admin.html");
     }
   }
 });
@@ -149,8 +149,9 @@ app.post("/addProperty", upload.single("propertyImg"), async (req, res) => {
 
 app.get('/api/items', async (req, res) => {
   try {
-      const items = await property_collection .find();
+      const items = await property_collection .find().limit(1);
       console.log(items)
+
       res.json(items);
       
   } catch (err) {

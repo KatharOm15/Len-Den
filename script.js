@@ -48,21 +48,68 @@ signOutButton.addEventListener("click", () => {
 
 //cards slider with click
 document.addEventListener("DOMContentLoaded", function () {
-  const count=0;
+  let count = 0;
+
   fetch('http://localhost:3000/api/items')
   .then(response => response.json())
   .then(data => {
-      const dataDiv = document.getElementById('data');
+      const dataDiv = document.getElementById('data-container');
+      console.log(data);
+
       data.forEach(item => {
           const itemDiv = document.createElement('div');
-          itemDiv.textContent =` name : ${item.propertyName},`;
-          dataDiv.appendChild(itemDiv);
-          count++;
-      });
-    console.log(count)
-  })
+          itemDiv.classList.add('inner-card');
+          
+          itemDiv.innerHTML = `
+              <div class="image-container">
+                  <img src="${item.image_url || './images/house1.jpg'}" alt="${item.propertyName}">
+              </div>
+              <h3 class="Property-details">${item.propertyName} & ${item.price}</h3>
+              <div class="info-container">
+                  <div class="info-row">
+                      <p>${item.state}</p>
+                      <a href="./map.html" class="citymap"><div class="city">${item.city}</div></a>
+                  </div>
+                  <p>${item.propertyDescription}</p>
+                  <button class="details" onclick="openForm('${item._id}')">View Details</button>
+              </div>
+          `;
 
-  .catch(error => console.error('Error fetching data:', error));
+
+              dataDiv.appendChild(itemDiv);
+              count++;
+          });
+          console.log(`Total properties: ${count}`);
+      })
+      .catch(error => console.error('Error fetching data:', error));
+
+function openForm(propertyId) {
+  fetchPropertyDetails(propertyId);
+}
+
+async function fetchPropertyDetails(propertyId) {
+  try {
+      const response = await fetch(`http://localhost:3000/property/${propertyId}`);
+      const property = await response.json();
+      document.getElementById('broker_name').value = property.broker_name;
+      document.getElementById('property_name').value = property.property_name;
+      document.getElementById('property_description').value = property.property_description;
+      document.getElementById('location').value = property.location;
+      document.getElementById('price').value = property.price;
+      document.getElementById('state').value = property.state;
+      document.getElementById('city').value = property.city;
+      document.getElementById('property_type').value = property.property_type;
+      document.getElementById('property_image').src = property.image_url || './images/house1.jpg';
+      document.getElementById('myForm').style.display = 'block';
+  } catch (err) {
+      console.error('Error fetching property details:', err);
+  }
+}
+
+function closeForm() {
+  document.getElementById('myForm').style.display = 'none';
+}
+
   
   
   //Slider
