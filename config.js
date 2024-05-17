@@ -12,7 +12,6 @@ connect
   .catch(() => {
     console.log("Database not Connected");
   });
-
 //creating Schema
 const userSchema = new mongoose.Schema({
   name: String,

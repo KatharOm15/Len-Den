@@ -63,26 +63,25 @@ app.post("/sign-in.html", async (req, res) => {
     if (role == "user") {
       res.redirect("/index.html");
     } else {
-      res.redirect("/addProperty.html");
+      res.redirect("/admin.html");
     }
   } else {
     res.send("User does not exist!!");
   }
 });
 
-app.get("/index.html", async(req, res) => {
+app.get("/index.html", async (req, res) => {
   const isAuthenticated = req.session.isAuthenticated || false;
 
   if (isAuthenticated) {
     console.log("hello bro");
-  data=await property_collections.find({
-    address:"Flat No.02, Plot No.41, Gut No. 137, Samarth Residency, Beed By Pass, Aurangabad"
-  });
-  console.log(data);
+    data = await property_collections.find({
+      address:
+        "Flat No.02, Plot No.41, Gut No. 137, Samarth Residency, Beed By Pass, Aurangabad",
+    });
+    console.log(data);
 
     res.sendFile(path.join(__dirname, "index.html"));
-
-
   } else {
     res.redirect("/sign-in.html");
   }
@@ -147,17 +146,16 @@ app.post("/addProperty", upload.single("propertyImg"), async (req, res) => {
   }
 });
 
-app.get('/api/items', async (req, res) => {
+app.get("/api/items", async (req, res) => {
   try {
-      const items = await property_collection .find();
-      console.log(items)
-      res.json(items);
-      
+    let limit = parseInt(req.query.limit) || 8;
+    const items = await property_collection.find().limit(limit);
+    console.log(items);
+    res.json(items);
   } catch (err) {
-      res.status(500).json({ message: err.message });
+    res.status(500).json({ message: err.message });
   }
 });
-
 
 const port = 3000;
 app.listen(port, () => {

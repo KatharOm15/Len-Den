@@ -17,7 +17,6 @@
     />
   </head>
   <body>
-    <div id="data"></div>
     <div class="main">
       <img src="./images/main-area.jpg" />
 
@@ -27,7 +26,7 @@
         </div>
         <div class="button">
           <a href="./index.html">HOME</a>
-          <a href="#">PROPERTIES</a>
+          <a href="./properties.html">PROPERTIES</a>
           <a href="#">AGENTS</a>
           <a href="#">ABOUT</a>
           <a href="./sign-in.html" id="sign-in">SIGN IN</a>
@@ -53,39 +52,85 @@
     <div class="form-popup" id="myForm">
       <form class="form-container" action="/index.html" method="get">
         <div class="image-section">
-          <img src="./images/house1.jpg" alt="Property Image">
+          <img src="./images/house1.jpg" alt="Property Image" />
         </div>
-          <h1>Property Details</h1>
-          <label for="broker_name"><b>Broker Name:</b></label>
-          <input type="text" id="broker_name" name="broker_name" value="John Doe" readonly>
+        <h1>Property Details</h1>
+        <label for="broker_name"><b>Broker Name:</b></label>
+        <input
+          type="text"
+          id="broker_name"
+          name="broker_name"
+          value="John Doe"
+          readonly
+        />
 
-          <label for="property_name"><b>Property Name:</b></label>
-          <input type="text" id="property_name" name="property_name" value="Luxury Villa" readonly>
+        <label for="property_name"><b>Property Name:</b></label>
+        <input
+          type="text"
+          id="property_name"
+          name="property_name"
+          value="Luxury Villa"
+          readonly
+        />
 
-          <label for="property_description"><b>Property Description:</b></label>
-          <textarea id="property_description" name="property_description" readonly>This is a spacious and luxurious villa located in a prime location with scenic views.</textarea>
+        <label for="property_description"><b>Property Description:</b></label>
+        <textarea
+          id="property_description"
+          name="property_description"
+          readonly
+        >
+This is a spacious and luxurious villa located in a prime location with scenic views.</textarea
+        >
 
-          <label for="location"><b>Location:</b></label>
-          <input type="text" id="location" name="location" value="Prime Street, City Center" readonly>
+        <label for="location"><b>Location:</b></label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          value="Prime Street, City Center"
+          readonly
+        />
 
-          <label for="price"><b>Price:</b></label>
-          <input type="text" id="price" name="price" value="$1,000,000" readonly>
+        <label for="price"><b>Price:</b></label>
+        <input
+          type="text"
+          id="price"
+          name="price"
+          value="$1,000,000"
+          readonly
+        />
 
-          <label for="state"><b>State:</b></label>
-          <input type="text" id="state" name="state" value="California" readonly>
+        <label for="state"><b>State:</b></label>
+        <input
+          type="text"
+          id="state"
+          name="state"
+          value="California"
+          readonly
+        />
 
-          <label for="city"><b>City:</b></label>
-          <input type="text" id="city" name="city" value="Los Angeles" readonly>
+        <label for="city"><b>City:</b></label>
+        <input type="text" id="city" name="city" value="Los Angeles" readonly />
 
-          <label for="property_type"><b>Property Type:</b></label>
-          <input type="text" id="property_type" name="property_type" value="Sell" readonly>
-          <div class="btn">
-          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-          <a href="./contactus.html"><button type="button" class="btn contactus" >Contact</button></a>
+        <label for="property_type"><b>Property Type:</b></label>
+        <input
+          type="text"
+          id="property_type"
+          name="property_type"
+          value="Sell"
+          readonly
+        />
+        <div class="btn">
+          <button type="button" class="btn cancel" onclick="closeForm()">
+            Close
+          </button>
+          <a href="./contactus.html"
+            ><button type="button" class="btn contactus">Contact</button></a
+          >
           <!-- <a href="./paymentgateway.html"><button type="button" class="btn payment" >Payment</button></a> -->
         </div>
       </form>
-  </div>
+    </div>
     <!-- Card Container Starts Here -->
     <div class="container">
       <div class="inner-container">
@@ -107,10 +152,12 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <button class="details" onclick="openForm()" >View Details</button>
+              <button class="details" onclick="openForm()">View Details</button>
             </div>
           </div>
           <div class="inner-card">
@@ -121,10 +168,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -135,10 +188,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -149,10 +208,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -163,10 +228,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -177,10 +248,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
         </div>
@@ -204,10 +281,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -218,10 +301,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -232,10 +321,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -246,10 +341,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -260,10 +361,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -274,10 +381,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
         </div>
@@ -301,10 +414,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -315,10 +434,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -329,10 +454,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -343,10 +474,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -357,10 +494,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -371,10 +514,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
         </div>
@@ -398,10 +547,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -412,10 +567,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -426,10 +587,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -440,10 +607,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -454,10 +627,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
           <div class="inner-card">
@@ -468,10 +647,16 @@
             <div class="info-container">
               <div class="info-row">
                 <p>State</p>
-                <a href="./map.html" class="citymap"><div class="city">City</div></a>
+                <a href="./map.html" class="citymap"
+                  ><div class="city">City</div></a
+                >
               </div>
               <p>Short description</p>
-              <a href="#"><button class="details" onclick="openForm()">View Details</button></a>
+              <a href="#"
+                ><button class="details" onclick="openForm()">
+                  View Details
+                </button></a
+              >
             </div>
           </div>
         </div>
@@ -536,17 +721,16 @@
     console.log("hello");
     var popup = document.getElementById("myForm");
     popup.classList.add("show");
-    setTimeout(function() {
-        popup.style.opacity = "1";
+    setTimeout(function () {
+      popup.style.opacity = "1";
     }, 10);
-}
+  }
 
-function closeForm() {
+  function closeForm() {
     var popup = document.getElementById("myForm");
     popup.style.opacity = "0";
-    setTimeout(function() {
-        popup.classList.remove("show");
+    setTimeout(function () {
+      popup.classList.remove("show");
     }, 300);
-}
-
+  }
 </script>
