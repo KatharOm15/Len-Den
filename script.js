@@ -21,6 +21,9 @@ window.onload = function () {
         document.getElementById("get-started").style.display = "none";
         // Display the sign-out button
         document.getElementById("sign-out").style.display = "inline-block";
+        if (window.history.replaceState) {
+          window.history.replaceState(null, null, window.location.href);
+        }
       } else {
         // Show the sign-in button after signing out
         document.getElementById("sign-in").style.display = "inline-block";
@@ -48,23 +51,22 @@ signOutButton.addEventListener("click", () => {
 
 //cards slider with click
 document.addEventListener("DOMContentLoaded", function () {
-  const count=0;
-  fetch('http://localhost:3000/api/items')
-  .then(response => response.json())
-  .then(data => {
-      const dataDiv = document.getElementById('data');
-      data.forEach(item => {
-          const itemDiv = document.createElement('div');
-          itemDiv.textContent =` name : ${item.propertyName},`;
-          dataDiv.appendChild(itemDiv);
-          count++;
+  const count = 0;
+  fetch("http://localhost:3000/api/items")
+    .then((response) => response.json())
+    .then((data) => {
+      const dataDiv = document.getElementById("data");
+      data.forEach((item) => {
+        const itemDiv = document.createElement("div");
+        itemDiv.textContent = ` name : ${item.propertyName},`;
+        dataDiv.appendChild(itemDiv);
+        count++;
       });
-    console.log(count)
-  })
+      console.log(count);
+    })
 
-  .catch(error => console.error('Error fetching data:', error));
-  
-  
+    .catch((error) => console.error("Error fetching data:", error));
+
   //Slider
   const restaurantContainer = document.querySelector(".card-slider");
   const leftRButton = document.querySelector(".restaurant-arrow-left");
@@ -147,4 +149,3 @@ function showPass() {
     togglePassword.classList.add("fa-eye");
   }
 }
-
