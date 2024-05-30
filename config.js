@@ -9,8 +9,9 @@ connect
   .then(() => {
     console.log("Database connected");
   })
-  .catch(() => {
-    console.log("Database not Connected");
+  .catch((err) => {
+
+    console.log("Database not Connected",err);
   });
 //creating Schema
 const userSchema = new mongoose.Schema({

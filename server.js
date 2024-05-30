@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const { user_collection, property_collection } = require("./config");
 const multer = require("multer");
 const { it } = require("node:test");
+const { log } = require("console");
+const { LOADIPHLPAPI } = require("dns");
 
 const app = express();
 
@@ -146,16 +148,29 @@ app.post("/addProperty", upload.single("propertyImg"), async (req, res) => {
   }
 });
 
+app.get("/agents",(req,res)=>{
+  const name = req.query.name;
+    const email = req.query.email;
+    console.log('Name:', name);
+    console.log('Email:', email);
+    res.status(200);
+    res.redirect("/index.html")
+    
+    
+});
+
 app.get("/api/items", async (req, res) => {
   try {
     let limit = parseInt(req.query.limit) || 8;
     const items = await property_collection.find().limit(limit);
-    console.log(items);
+    // console.log(items);
     res.json(items);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 });
+
+
 
 const port = 3000;
 app.listen(port, () => {
