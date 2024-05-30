@@ -16,6 +16,7 @@ app.use(
     secret: "secret key",
     resave: false,
     saveUninitialized: true,
+    cookie: { isAuthenticated: false },
   })
 );
 app.use(express.urlencoded({ extended: false }));
@@ -87,6 +88,14 @@ app.get("/index.html", async (req, res) => {
   } else {
     res.redirect("/sign-in.html");
   }
+});
+
+app.get("/index.html", ensureAuthenticated, (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
+
+app.get("/admin.html", ensureAuthenticated, (req, res) => {
+  res.sendFile(__dirname + "/admin.html");
 });
 
 //handle Authentication
@@ -161,16 +170,26 @@ app.get("/agents",(req,res)=>{
 
 app.get("/api/items", async (req, res) => {
   try {
-    let limit = parseInt(req.query.limit) || 8;
-    const items = await property_collection.find().limit(limit);
-    // console.log(items);
+    const propertyType = req.query.propertyType;
+    const limit = parseInt(req.query.limit) || 10;
+    const query = propertyType ? { propertyType } : {};
+    const items = await property_collection.find(query).limit(limit).exec();
+    //console.log("Items retrieved from DB:", items);
     res.json(items);
   } catch (err) {
+    console.error("Error occurred:", err);
     res.status(500).json({ message: err.message });
   }
 });
 
-
+// Middleware to protect routes
+function ensureAuthenticated(req, res, next) {
+  if (req.session.isAuthenticated) {
+    return next();
+  } else {
+    res.redirect("/sign-in.html");
+  }
+}
 
 const port = 3000;
 app.listen(port, () => {
