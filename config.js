@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
+const co=require("dotenv").config();
+const db=process.env.db;
 
 const connect = mongoose.connect(
-  "mongodb+srv://rudrakshnile930:nilerudra064@lenden.vhsvsdt.mongodb.net/lenden"
+`${db}`
 );
 
 //checking database connected or not

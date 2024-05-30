@@ -158,3 +158,23 @@ function showPass() {
     togglePassword.classList.add("fa-eye");
   }
 }
+function selectRole(val)
+{
+  if(val=="user")
+    {
+      document.getElementById("broker-box").style.color="#00000063";
+    document.getElementById("broker-box").style.border="1px solid #00000063";
+
+  document.getElementById("user-box").style.border="2px solid black";
+    }
+    else
+    {
+      document.getElementById("user-box").style.color="#00000063";
+  document.getElementById("user-box").style.border="1px solid #00000063";
+
+  document.getElementById("broker-box").style.border="2px solid black";
+  
+    }
+ document.getElementById("role").value=val;
+  
+}

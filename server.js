@@ -157,16 +157,6 @@ app.post("/addProperty", upload.single("propertyImg"), async (req, res) => {
   }
 });
 
-app.get("/agents",(req,res)=>{
-  const name = req.query.name;
-    const email = req.query.email;
-    console.log('Name:', name);
-    console.log('Email:', email);
-    res.status(200);
-    res.redirect("/index.html")
-    
-    
-});
 
 app.get("/api/items", async (req, res) => {
   try {
