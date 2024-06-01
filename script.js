@@ -1,7 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
   const dataDiv = document.querySelector(".grid");
 
-  fetch("http://localhost:3000/api/items?limit=5")
+  //After sign-in showing sign-out option and Hiding sign-in option
+  fetch("/auth-status")
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.isAuthenticated) {
+        document.getElementById("get-started").style.display = "none";
+        document.getElementById("sign-in").style.display = "none";
+        document.getElementById("sign-out").style.display = "inline";
+      }
+    })
+    .catch((error) => console.error("Error fetching auth status:", error));
+
+  //After clicking on sign-out redirecting to index.html
+  document.getElementById("sign-out").addEventListener("click", () => {
+    fetch("/sign-out", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.redirected) {
+          window.location.href = response.url; // Redirect to the specified URL
+        } else {
+          console.error("Sign-out failed");
+        }
+      })
+      .catch((error) => console.error("Error during sign-out:", error));
+  });
+
+  fetch("http://localhost:3000/api/items?limit=8")
     .then((response) => response.json())
     .then((data) => {
       data.forEach((item) => {
@@ -41,14 +71,15 @@ document.addEventListener("DOMContentLoaded", function () {
         article.appendChild(textDiv);
 
         article.addEventListener("click", () => {
-          document.getElementById("propertyImg").src = item.filepath;  // Add this line to set image
+          document.getElementById("propertyImg").src = item.filepath; // Add this line to set image
           document.getElementById("propertyName").value = item.propertyName;
           document.getElementById("propertyArea").value = item.propertyArea;
           document.getElementById("propertyPrice").value = item.propertyPrice;
           document.getElementById("propertyAddress").value = item.address;
           document.getElementById("propertyType").value = item.propertyType;
           document.getElementById("propertyCity").value = item.city;
-          document.getElementById("propertyDescription").value = item.propertyDescription;
+          document.getElementById("propertyDescription").value =
+            item.propertyDescription;
 
           document.getElementById("popupForm").style.display = "block";
         });
@@ -158,23 +189,17 @@ function showPass() {
     togglePassword.classList.add("fa-eye");
   }
 }
-function selectRole(val)
-{
-  if(val=="user")
-    {
-      document.getElementById("broker-box").style.color="#00000063";
-    document.getElementById("broker-box").style.border="1px solid #00000063";
+function selectRole(val) {
+  if (val == "user") {
+    document.getElementById("broker-box").style.color = "#00000063";
+    document.getElementById("broker-box").style.border = "1px solid #00000063";
 
-  document.getElementById("user-box").style.border="2px solid black";
-    }
-    else
-    {
-      document.getElementById("user-box").style.color="#00000063";
-  document.getElementById("user-box").style.border="1px solid #00000063";
+    document.getElementById("user-box").style.border = "2px solid black";
+  } else {
+    document.getElementById("user-box").style.color = "#00000063";
+    document.getElementById("user-box").style.border = "1px solid #00000063";
 
-  document.getElementById("broker-box").style.border="2px solid black";
-  
-    }
- document.getElementById("role").value=val;
-  
+    document.getElementById("broker-box").style.border = "2px solid black";
+  }
+  document.getElementById("role").value = val;
 }

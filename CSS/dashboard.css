@@ -25,7 +25,6 @@ body {
   height: auto;
 }
 
-
 .navbar {
   width: 100%;
   height: 50px;
@@ -210,7 +209,8 @@ button {
   align-items: center;
 } */
 
-.details ,.city{
+.details,
+.city {
   background: rgba(0, 0, 0, 0.1);
   font-size: 15px;
   padding: 10px 15px;
@@ -467,28 +467,25 @@ footer .bottom_content section {
   }
 } */
 
+/* Popup container */
 
-  /* Popup container */
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
-  .form-popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-   
-    background-color: rgba(0, 0, 0, 0.5);
-    background-color: gray;
-    z-index: 1;
-    transition: opacity 0.3s ease;
-    
+  background-color: rgba(0, 0, 0, 0.5);
+  background-color: gray;
+  z-index: 1;
+  transition: opacity 0.3s ease;
 }
 
 /* Popup form */
 /* Popup form */
 .form-container {
-  
   overflow: scroll;
   border-radius: 12px;
   position: fixed;
@@ -507,23 +504,21 @@ footer .bottom_content section {
   border-radius: 15px;
 }
 
-
 /* Popup form - show */
 .form-popup.show {
-    display:block;
-    
+  display: block;
 }
 
 /* Full-width input fields */
-.form-container input[type=text], .form-container textarea {
-    width: 95%;
-    padding: 10px;
-    margin: 5px 0 10px 0;
-    border: none;
-    background: #f1f1f1;
-    
+.form-container input[type="text"],
+.form-container textarea {
+  width: 95%;
+  padding: 10px;
+  margin: 5px 0 10px 0;
+  border: none;
+  background: #f1f1f1;
 }
-.btn{
+.btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -531,69 +526,58 @@ footer .bottom_content section {
 }
 
 /* Set a style for the cancel button */
- .cancel {
+.cancel {
   width: 30%;
   height: 7vh;
   font-size: 15px;
   background-color: rgb(134, 128, 128);
-
-    
 }
 .contactus {
   width: 100%;
   height: 7vh;
   font-size: 15px;
   background-color: rgb(134, 128, 128);
-
 }
-.payment{
+.payment {
   width: 100%;
   height: 7vh;
   font-size: 15px;
   background-color: rgb(134, 128, 128);
-  
-
 }
 
-.btn a{
+.btn a {
   width: 30%;
 }
 /* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-    opacity: 1;
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
 }
 
 .image-section {
   text-align: center;
-  
- 
 }
 .image-section img {
   max-width: 50%;
   height: auto;
   border-radius: 8px;
 }
-.citymap{
-  
+.citymap {
   text-decoration: none;
   color: black;
 }
-
 
 .content {
   margin-bottom: 20px;
   flex: 1; /* Allow content to grow to fill available space */
   padding: 20px;
   justify-content: center;
-  
+
   align-items: center;
-  
-  
 }
-h1{
+h1 {
   margin: 50px;
   text-align: center;
-
 }
 
 .cards {
@@ -602,7 +586,7 @@ h1{
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 30px;
   align-items: stretch;
 }
@@ -636,8 +620,8 @@ article:hover {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 .popup-content {
@@ -664,7 +648,8 @@ article:hover {
   cursor: pointer;
 }
 
-form input[readonly], form textarea[readonly] {
+form input[readonly],
+form textarea[readonly] {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   padding: 10px;
@@ -677,12 +662,10 @@ form textarea[readonly] {
   resize: none; /* Prevent resizing */
   height: 100px; /* Set a default height */
 }
-#propertyImg{
+#propertyImg {
   width: 50%;
   margin-left: 20%;
   object-fit: fill;
   max-height: 200px;
   border-radius: 12px;
- 
-
 }

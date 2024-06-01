@@ -133,7 +133,9 @@ app.post("/addProperty", upload.single("propertyImg"), async (req, res) => {
       propertyArea: req.body.propertyArea,
       propertyPrice: req.body.price,
       address: req.body.address,
-      propertyType: req.body.propertyType,
+      propertyType:
+        req.body.propertyType.charAt(0).toUpperCase() +
+        req.body.propertyType.substr(1).toLowerCase(),
       state: req.body.propertyState,
       city: req.body.city,
       propertyDescription: req.body.description || "",
@@ -151,12 +153,11 @@ app.post("/addProperty", upload.single("propertyImg"), async (req, res) => {
         console.log(error);
       });
 
-    res.redirect("/index.html");
+    res.redirect("/admin.html");
   } else {
     res.status(401).send("Unauthorized");
   }
 });
-
 
 app.get("/api/items", async (req, res) => {
   try {

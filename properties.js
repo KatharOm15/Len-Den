@@ -1,9 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
+  fetch("/auth-status")
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.isAuthenticated) {
+        document.getElementById("sign-in").style.display = "none";
+        document.getElementById("sign-out").style.display = "inline";
+      }
+    })
+    .catch((error) => console.error("Error fetching auth status:", error));
+
+  //After clicking on sign-out redirecting to index.html
+  document.getElementById("sign-out").addEventListener("click", () => {
+    fetch("/sign-out", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.redirected) {
+          window.location.href = response.url; // Redirect to the specified URL
+        } else {
+          console.error("Sign-out failed");
+        }
+      })
+      .catch((error) => console.error("Error during sign-out:", error));
+  });
+
   const dataDiv = document.querySelector(".grid");
   const options = document.querySelectorAll(".options .box");
 
   // Function to fetch and display properties
-  function fetchAndDisplayProperties(propertyType = "", limit = 10) {
+  function fetchAndDisplayProperties(propertyType, limit = 10) {
     let url = `http://localhost:3000/api/items?limit=${limit}`;
     if (propertyType) {
       url += `&propertyType=${propertyType}`;
@@ -23,6 +51,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Clear previous items
         dataDiv.innerHTML = "";
+
+        if (data.length === 0) {
+          dataDiv.innerHTML = `<h1 class="info">Nothing to show</h1>`;
+          return;
+        }
 
         data.forEach((item) => {
           const article = document.createElement("article");
