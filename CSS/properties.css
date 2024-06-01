@@ -255,3 +255,206 @@ footer .bottom_content section {
   }
 }
 /* Footer Ends Here */
+
+* Popup container */
+
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  background-color: gray;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Popup form */
+/* Popup form */
+.form-container {
+  overflow: scroll;
+  border-radius: 12px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  height: 90%;
+  z-index: 10000;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  border-radius: 15px;
+}
+
+/* Popup form - show */
+.form-popup.show {
+  display: block;
+}
+
+/* Full-width input fields */
+.form-container input[type="text"],
+.form-container textarea {
+  width: 95%;
+  padding: 10px;
+  margin: 5px 0 10px 0;
+  border: none;
+  background: #f1f1f1;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2%;
+}
+
+/* Set a style for the cancel button */
+.cancel {
+  width: 30%;
+  height: 7vh;
+  font-size: 15px;
+  background-color: rgb(134, 128, 128);
+}
+.contactus {
+  width: 100%;
+  height: 7vh;
+  font-size: 15px;
+  background-color: rgb(134, 128, 128);
+}
+.payment {
+  width: 100%;
+  height: 7vh;
+  font-size: 15px;
+  background-color: rgb(134, 128, 128);
+}
+
+.btn a {
+  width: 30%;
+}
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+.image-section {
+  text-align: center;
+}
+.image-section img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 8px;
+}
+.citymap {
+  text-decoration: none;
+  color: black;
+}
+
+.content {
+  margin-bottom: 20px;
+  flex: 1; /* Allow content to grow to fill available space */
+  padding: 20px;
+  justify-content: center;
+
+  align-items: center;
+}
+h1 {
+  margin: 50px;
+  text-align: center;
+}
+
+.cards {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 30px;
+  align-items: stretch;
+}
+
+.grid > article {
+  transition: transform 0.3s ease-in-out;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+.grid > article img {
+  max-width: 100%;
+}
+
+.grid .text {
+  padding: 20px;
+}
+
+article:hover {
+  cursor: pointer;
+  transform: scale(0.95);
+}
+
+/* Popup Form Styles */
+.popup-form {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.popup-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+form input[readonly],
+form textarea[readonly] {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+form textarea[readonly] {
+  resize: none; /* Prevent resizing */
+  height: 100px; /* Set a default height */
+}
+#propertyImg {
+  width: 50%;
+  margin-left: 20%;
+  object-fit: fill;
+  max-height: 200px;
+  border-radius: 12px;
+}

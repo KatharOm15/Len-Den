@@ -93,6 +93,22 @@ document.addEventListener("DOMContentLoaded", function () {
           article.appendChild(img);
           article.appendChild(textDiv);
 
+          article.addEventListener("click", () => {
+            document.getElementById("propertyImg").src = item.filepath; // Add this line to set image
+            document.getElementById("propertyName").value = item.propertyName;
+            document.getElementById("propertyArea").value = item.propertyArea;
+            document.getElementById("propertyPrice").value = item.propertyPrice;
+            document.getElementById("propertyAddress").value = item.address;
+            document.getElementById("propertyType").value = item.propertyType;
+            document.getElementById("propertyCity").value = item.city;
+            document.getElementById("propertyDescription").value =
+              item.propertyDescription;
+  
+            document.getElementById("popupForm").style.display = "block";
+          });
+
+
+
           dataDiv.appendChild(article);
         });
       })
@@ -100,6 +116,24 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Error fetching data:", error);
         dataDiv.innerHTML = `<p class="error">Failed to load data. Please try again later.</p>`;
       });
+      // Get the modal
+  const popupForm = document.getElementById("popupForm");
+
+  // Get the <span> element that closes the modal
+  const closeBtn = document.querySelector(".close-btn");
+
+  // When the user clicks on <span> (x), close the modal
+  closeBtn.addEventListener("click", () => {
+    popupForm.style.display = "none";
+  });
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.addEventListener("click", (event) => {
+    if (event.target == popupForm) {
+      popupForm.style.display = "none";
+    }
+  });
+      
   }
 
   // Add click event listener to each option

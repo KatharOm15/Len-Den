@@ -7,6 +7,8 @@ const multer = require("multer");
 const { it } = require("node:test");
 const { log } = require("console");
 const { LOADIPHLPAPI } = require("dns");
+const nodemailer = require('nodemailer');
+
 
 const app = express();
 
@@ -181,6 +183,8 @@ function ensureAuthenticated(req, res, next) {
     res.redirect("/sign-in.html");
   }
 }
+
+//end
 
 const port = 3000;
 app.listen(port, () => {
